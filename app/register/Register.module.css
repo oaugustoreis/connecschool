@@ -1,0 +1,11 @@
+.register{
+    display: flex;
+}
+
+@media screen and (max-width: 1080px) {
+  .register {
+    display: flex;
+    flex-direction: column;
+  }
+    
+}

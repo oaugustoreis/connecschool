@@ -1,31 +1,66 @@
-import Message from "./ChatMessage"
-export default function Chat() {
-    return (
-        <div>
-            <div className="flex items-center p-2 rounded-lg bg-[#f1f4f9] h-full justify-between mb-4 ">
-                <div className='flex text-sm text-[#202224] justify-between items-center w-full'>
-                    <h1>
-                        Prof. Iara Magalhães
-                    </h1>
-                    <div className="flex justify-between items-center gap-2">
-                        <div className="bg-yellow-500 w-3 h-3 rounded-full">
-                        </div>
-                        <span>Online</span>
-                    </div>
-                    <div className="flex items-center">
-                        <span>
-                            iaradasilva@connect.com
-                        </span>
-                        <img width="32" height="32" src="https://img.icons8.com/windows/32/menu-2.png" alt="menu-2" />
-                    </div>
-                </div>
+import { useState } from "react";
+import Message from "./ChatMessage";
+
+export default function Chat({ conversa }) {
+  const [messages, setMessages] = useState([
+    { message: "Oi, professora Iara! Tudo bem? A Jadna comentou que teve uma atividade em grupo hoje. Ela ficou um pouco insegura queria saber como ela se saiu.", side: true },
+    { message: "Aproveitando, queria agradecer pelo apoio que você tem dado a ela. Tem feito muita diferença, viu?", side: false },
+    { message: "Oi, Dona Abigail! Tudo ótimo, obrigada. A Jadna participou sim e se saiu muito bem! No início estava tímida, mas depois colaborou com ótimas ideias.", side: true },
+    { message: "Ela vem mostrando muita evolução. Estamos muito felizes com o progresso!", side: true },
+  ]);
+
+  const [inputValue, setInputValue] = useState("");
+
+  function handleSendMessage() {
+    if (inputValue.trim() === "") return;
+
+    const newMessage = { message: inputValue, side: false };
+
+    setMessages([...messages, newMessage]);
+    setInputValue("");
+  }
+  return (
+    conversa && (
+      <div className="flex flex-col h-full">
+        <div className="flex items-center p-2 rounded-lg bg-[#f1f4f9] justify-between mb-2">
+          <div className="flex text-sm text-[#202224] justify-between items-center w-full">
+            <h1>{conversa.name}</h1>
+            <div className="flex justify-between items-center gap-2">
+              <div className="bg-yellow-500 w-3 h-3 rounded-full" />
+              <span>Online</span>
             </div>
-            <div>
-                <Message side={true} message={"Oi, professora Iara! Tudo bem? A Jadna comentou que teve uma atividade em grupo hoje. Ela ficou um pouco insegura queria saber como ela se saiu."}/>
-                <Message side={false} message={"Aproveitando, queria agradecer pelo apoio que você tem dado a ela. Tem feito muita diferença, viu?"}/>
-                <Message side={true} message={" Oi, Dona Abigail! Tudo ótimo, obrigada. A Jadna participou sim e se saiu muito bem! No início estava tímida, mas depois colaborou com ótimas ideias."}/>
-                <Message side={false} message={" Fico muito feliz em saber que o apoio está fazendo diferença. Estamos juntas nesse processo! Qualquer coisa, me chama por aqui."}/>
+            <div className="flex items-center gap-2">
+              <span>{conversa.email}</span>
+              <img width="32" height="32" src="https://img.icons8.com/windows/32/menu-2.png" alt="menu-2" />
             </div>
+          </div>
         </div>
+  
+        <div className="flex-1 overflow-y-auto p-4">
+          {conversa.conversation.map((msg, index) => (
+            <Message key={index} side={msg.side} message={msg.message} />
+          ))}
+        </div>
+  
+        <div className="flex items-center p-2 gap-3 bg-white shadow-inner">
+          <div className="flex items-center w-full max-w-2xl shadow-md px-3 bg-white py-2 border border-gray-300 rounded-full">
+            <input
+              className="w-full outline-none"
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="Escreva aqui..."
+            />
+            <img width="24" src="https://img.icons8.com/windows/32/attach.png" alt="attach" />
+          </div>
+          <button
+            className="bg-blue-400 shadow-md text-white rounded-full text-sm p-2 px-4 hover:bg-blue-500"
+            onClick={handleSendMessage}
+          >
+            Enviar
+          </button>
+        </div>
+      </div>
     )
+  );
 }

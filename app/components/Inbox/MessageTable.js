@@ -1,9 +1,48 @@
-export default function MessageTable() {
+export default function MessageTable({ setConversa }) {
     const messages = [
-        { name: "Prof. Iara Magalhães", subject: "Português", date: "12 de fev.", newMessages: 1 },
-        { name: "Prof. Millaya Oliveira", subject: "Direção", date: "12 de fev.", newMessages: 2 },
-        { name: "Prof. Alex Joelson", subject: "Matemática", date: "12 de fev.", newMessages: 1 },
-        { name: "Prof. Augusto Cesar", subject: "História", date: "12 de fev.", newMessages: 1 },
+        {
+            id: 1, name: "Prof. Iara Magalhães", email: "iara.magalhaes@connect.edu.br", subject: "Português", date: "12 de fev.", newMessages: 1,
+            conversation: [
+                { message: "Bom dia, professora Iara! Tudo bem? Gostaria de saber como o Joãozinho se comportou hoje na aula.", side: true },
+                { message: "Bom dia! Tudo ótimo, e você? O Joãozinho participou muito bem hoje, especialmente nas atividades em grupo!", side: false },
+                { message: "Fico muito feliz em saber! Ele estava um pouco nervoso de manhã.", side: true },
+                { message: "É normal, mas ele se saiu super bem. Incentivamos bastante a participação de todos e ele se destacou positivamente.", side: false },
+                { message: "Que ótimo! Muito obrigado pelo retorno, professora. 😊", side: true },
+                { message: "Imagina! Qualquer novidade, mantenho você informado. Tenha um ótimo dia!", side: false }
+            ]
+        },
+        {
+            id: 2, name: "Prof. Millaya Oliveira", email: "millaya.oliveira@connect.edu.br", subject: "Direção", date: "12 de fev.", newMessages: 2,
+
+            conversation:[
+                { message: "Boa tarde, professora! A Ana comentou que teve uma apresentação hoje. Como ela se saiu?", side: true },
+                { message: "Boa tarde! A Ana foi muito bem. Ela estava um pouco tímida no começo, mas depois se soltou e apresentou super bem.", side: false },
+                { message: "Que bom ouvir isso! Obrigada pelo apoio de sempre!", side: true },
+                { message: "Eu que agradeço a parceria! A Ana é uma ótima aluna.", side: false }
+            ]
+              
+        },
+        {
+            id: 3, name: "Prof. Alex Joelson", email: "alex.joelson@connect.edu.br", subject: "Matemática", date: "12 de fev.", newMessages: 1,
+
+            conversation:[
+                { message: "Oi, professor! Vi que o Gustavo teve prova de matemática hoje. Ele estava um pouco preocupado em casa.", side: true },
+                { message: "Oi! O Gustavo foi muito bem, fez a prova com bastante atenção. Estou orgulhoso do desempenho dele.", side: false },
+                { message: "Nossa, que alívio! Ele se dedicou bastante estudando.", side: true },
+                { message: "Isso fez toda a diferença! Parabéns pelo apoio em casa também.", side: false }
+            ]
+              
+        },
+        {
+            id: 4, name: "Prof. Augusto Cesar", email: "augusto.reis@connect.edu.br", subject: "História", date: "12 de fev.", newMessages: 1,
+
+            conversation:[
+                { message: "Olá, professora! Notei que o Lucas anda um pouco quieto em casa. Está tudo bem na escola?", side: true },
+                { message: "Olá! Aqui na escola ele tem estado mais reservado, mas participa normalmente das atividades.", side: false },
+                { message: "Entendi, vamos conversar melhor em casa. Obrigada por avisar!", side: true },
+                { message: "Claro! Se precisar, estou à disposição para ajudar no que for necessário.", side: false }
+            ]
+        },
     ];
 
     return (
@@ -26,7 +65,7 @@ export default function MessageTable() {
                 </thead>
                 <tbody className="text-sm text-gray-700">
                     {messages.map((msg, idx) => (
-                        <tr
+                        <tr onClick={() => setConversa(msg)}
                             key={idx}
                             className={` cursor-pointer hover:bg-gray-50 transition duration-200 ease-in-out`}
                         >

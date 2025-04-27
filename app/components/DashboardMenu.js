@@ -4,23 +4,39 @@ import logo from '../../public/assets/logo-w-name.png';
 import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import { useRouter } from 'next/navigation';
+import { signOut } from "firebase/auth";
+import { auth } from '../utils/firebase';
 export default function Navbar({ setActiveComponent }) {
+    
+    
     const [activeButton, setActiveButton] = useState("Dashboard");
-
+    const router = useRouter();
 
     const handleButtonClick = (component, name) => {
         setActiveButton(name);
         setActiveComponent(component);
     };
+    const logout = ( ) => {
+        try {
+            signOut(auth);
+            router.push("/");
+            return true;
+        }
+        catch (error) {
+            console.error("Error logging out user:", error);
+            alert(error.message);
+            return false;
+        }
+    };
     const items = [
         { id: 1, name: 'Dashboard', icon: 'https://img.icons8.com/windows/32/dashboard.png', component: 'dashboard' },
-        { id: 2, name: 'Painel', icon: 'https://img.icons8.com/windows/32/microsoft--v2.png', component: 'main' },
+        { id: 2, name: 'Painel', icon: 'https://img.icons8.com/windows/32/microsoft--v2.png', component: 'painel' },
         { id: 3, name: 'Inbox', icon: 'https://img.icons8.com/windows/32/chat.png', component: 'inbox' },
         { id: 4, name: 'Atividades', icon: 'https://img.icons8.com/windows/32/todo-list.png', component: 'atividades' },
         { id: 5, name: 'Calendario', icon: 'https://img.icons8.com/windows/32/calendar.png', component: 'calendar' },
         { id: 6, name: 'Lista de afazeres', icon: 'https://img.icons8.com/windows/32/inspection.png', component: 'main' },
-        { id: 7, name: 'Contatos', icon: 'https://img.icons8.com/windows/32/user-group-man-man--v1.png', component: 'main' },
+        { id: 7, name: 'Contatos', icon: 'https://img.icons8.com/windows/32/user-group-man-man--v1.png', component: 'contacts' },
         { id: 8, name: 'Desempenho', icon: 'https://img.icons8.com/windows/32/bar-chart.png', component: 'main' },
         { id: 9, name: 'Meu Perfil', icon: 'https://img.icons8.com/windows/32/gender-neutral-user.png', component: 'profile' },
     ];
@@ -28,9 +44,9 @@ export default function Navbar({ setActiveComponent }) {
         <>
             <nav className=" h-screen w-full flex flex-col items-center bg-white shadow-lg">
                 <div className="flex pt-3 items-center justify-center h-24 w-full mb-8">
-                    <Image src={logo} alt='logo' width={200} />
+                    <Image priority src={logo} alt='logo' width={200} />
                 </div>
-                <div className="flex flex-col justify-between h-full w-full pr-2">
+                <div className="flex flex-col justify-between h-full w-full">
                     {items.map((item) => (
                         <div key={item.id} className="flex items-center">
                             <AnimatePresence>
@@ -68,10 +84,10 @@ export default function Navbar({ setActiveComponent }) {
                             <img width="24" height="24" src="https://img.icons8.com/windows/32/settings--v1.png" alt="settings--v1" />
                             <h2 className="text-lg text-[.8rem] font-[500] text-black"> Configurações</h2>
                         </div>
-                        <div className="flex px-3 justify-center  items-center gap-8 p-4 w-full my-1 cursor-pointer hover:bg-gray-200">
+                        <button onClick={logout} className="flex px-3 justify-center  items-center gap-8 p-4 w-full my-1 cursor-pointer hover:bg-gray-200">
                             <img width="24" height="24" src="https://img.icons8.com/windows/32/shutdown.png" alt="shutdown" />
                             <h2 className="text-lg text-[.8rem] font-[500] text-black"> Sair</h2>
-                        </div>
+                        </button>
                     </div>
                 </div>
             </nav>
