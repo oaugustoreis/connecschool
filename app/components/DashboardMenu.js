@@ -35,7 +35,7 @@ export default function Navbar({ setActiveComponent }) {
         { id: 3, name: 'Inbox', icon: 'https://img.icons8.com/windows/32/chat.png', component: 'inbox' },
         { id: 4, name: 'Atividades', icon: 'https://img.icons8.com/windows/32/todo-list.png', component: 'atividades' },
         { id: 5, name: 'Calendario', icon: 'https://img.icons8.com/windows/32/calendar.png', component: 'calendar' },
-        { id: 6, name: 'Lista de afazeres', icon: 'https://img.icons8.com/windows/32/inspection.png', component: 'main' },
+        { id: 6, name: 'Lista de afazeres', icon: 'https://img.icons8.com/windows/32/inspection.png', component: 'todo' },
         { id: 7, name: 'Contatos', icon: 'https://img.icons8.com/windows/32/user-group-man-man--v1.png', component: 'contacts' },
         { id: 8, name: 'Desempenho', icon: 'https://img.icons8.com/windows/32/bar-chart.png', component: 'main' },
         { id: 9, name: 'Meu Perfil', icon: 'https://img.icons8.com/windows/32/gender-neutral-user.png', component: 'profile' },
@@ -54,7 +54,7 @@ export default function Navbar({ setActiveComponent }) {
                                     <motion.div
                                         initial={{ opacity: 0, scale: 0 }}
                                         animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ type: "Spring", duration: 0.2, delay: 0 }}
+                                        transition={{ type: "spring", duration: 0.2, delay: 0 }}
                                         className="mr-3 left-0 h-full w-2 bg-[#60A5FA] rounded-full"
                                     />
                                 )}

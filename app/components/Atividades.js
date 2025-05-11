@@ -1,14 +1,14 @@
 import UploadButton from './AtividadesComponents/UploadButton';
 import { motion, AnimatePresence } from 'framer-motion';
-export default function Atividades() {
+export default function Atividades({child}) {
     return (
         <AnimatePresence>
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ type: "Spring", duration: 0.2, delay: 0 }} className="w-full h-full">
+                transition={{ type: "spring", duration: 0.2, delay: 0 }} className="w-full h-full">
                 <div className="p-5 flex flex-col h-full shadow-[0_6px_6px_rgba(0,0,0,0.05)] bg-white rounded-lg mb-4 ">
-                    <h1 className="text-2xl font-bold mb-6">Aqui está um resumo sobre o que está acontecendo com Jadna.</h1>
+                    <h1 className="text-2xl font-bold mb-6">Aqui está um resumo sobre o que está acontecendo com {child}.</h1>
                     <div className='flex items-center'>
 
                         <div className=" mx-auto cursor-pointer  w-5/6 p-3">
@@ -47,7 +47,7 @@ export default function Atividades() {
                             <h1 className='font-light w-1/5'>12 de fev.</h1>
                             <h1 className='font-light w-1/5'>12 de abr.</h1>
                             <div className='flex justify-center items-center w-1/5'>
-                                <UploadButton />
+                                <UploadButton buttonText="Enviar" />
                             </div>
                         </div>
                         <hr className='border-gray-200 w-full mx-auto' />
@@ -57,7 +57,7 @@ export default function Atividades() {
                             <h1 className='font-light w-1/5'>12 de fev.</h1>
                             <h1 className='font-light w-1/5'>12 de abr.</h1>
                             <div className='flex justify-center items-center w-1/5'>
-                            <UploadButton />
+                            <UploadButton buttonText="Enviar" />
                             </div>
                         </div>
                         <hr className='border-gray-200 w-full mx-auto' />
@@ -67,7 +67,7 @@ export default function Atividades() {
                             <h1 className='font-light w-1/5'>12 de fev.</h1>
                             <h1 className='font-light w-1/5'>12 de abr.</h1>
                             <div className='flex justify-center items-center w-1/5'>
-                            <UploadButton />
+                            <UploadButton  buttonText="Enviar"/>
                             </div>
                         </div>
                         <hr className='border-gray-200 w-full mx-auto' />
@@ -77,7 +77,7 @@ export default function Atividades() {
                             <h1 className='font-light w-1/5'>12 de fev.</h1>
                             <h1 className='font-light w-1/5'>12 de abr.</h1>
                             <div className='flex justify-center items-center w-1/5'>
-                            <UploadButton />
+                            <UploadButton  buttonText="Enviar"/>
                             </div>
                         </div>
                         <hr className='border-gray-200 w-full mx-auto' />
@@ -87,7 +87,7 @@ export default function Atividades() {
                             <h1 className='font-light w-1/5'>12 de fev.</h1>
                             <h1 className='font-light w-1/5'>12 de abr.</h1>
                             <div className='flex justify-center items-center w-1/5'>
-                                <UploadButton />
+                                <UploadButton  buttonText="Enviar"/>
                             </div>
 
                         </div>

@@ -26,7 +26,7 @@ export default function Profile({ userData }) {
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ type: "Spring", duration: 0.2, delay: 0 }} className="w-full h-full">
+                transition={{ type: "spring", duration: 0.2, delay: 0 }} className="w-full h-full">
                 <div className="flex items-center h-full shadow-[0_6px_6px_rgba(0,0,0,0.05)] bg-white rounded-lg justify-between mb-4 ">
                     <div className='h-full w-1/2 flex flex-col items-center justify-center'>
                         <div className='mb-8 flex items-center justify-center mb-4 gap-3'>

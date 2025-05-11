@@ -1,3 +1,8 @@
+import {
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
+} from "@/components/ui/hover-card"
 
 import { motion, AnimatePresence } from 'framer-motion';
 export default function Calendar() {
@@ -11,7 +16,7 @@ export default function Calendar() {
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ type: "Spring", duration: 0.2, delay: 0 }} className="w-full h-full">
+                transition={{ type: "spring", duration: 0.2, delay: 0 }} className="w-full h-full">
                 <div className="p-5 flex flex-col h-full shadow-[0_6px_6px_rgba(0,0,0,0.05)] bg-white rounded-lg mb-4 ">
                     <h1 className="text-2xl font-bold mb-6">Aqui está um resumo sobre o que está acontecendo com Jadna.</h1>
                     <div className='flex items-center'>
@@ -27,9 +32,34 @@ export default function Calendar() {
                                 <div className='flex flex-col h-1/2  items-center justify-center  w-full'>
                                     <span className='font-regular text-xl font-bold mb-2'>Próximos Eventos</span>
                                     <div className='flex flex-col gap-2 text-center'>
-                                        <span>Simulado de Mat... - 02/03</span>
-                                        <span>Apresentação de artes - 02/04</span>
-                                        <span>Apresentação de Port... - 08/04</span>
+
+                                        <HoverCard>
+                                            <HoverCardTrigger><span>Simulado de Mat... - 02/03</span></HoverCardTrigger>
+                                            <HoverCardContent>
+                                                <h1>Nota Parcial: 10 pontos</h1>
+                                                <h1>Simulado de Matemática</h1>
+                                                <h1>Professor Alex Joelson</h1>
+                                            </HoverCardContent>
+                                        </HoverCard>
+                                        <HoverCard>
+                                            <HoverCardTrigger> <span>Apresentação de Port... - 08/04</span></HoverCardTrigger>
+                                            <HoverCardContent>
+                                            <h1>Nota Parcial: 10 pontos</h1>
+                                                <h1>Apresentação de Português</h1>
+                                                <h1>Professor Alex Joelson</h1>
+                                            </HoverCardContent>
+                                        </HoverCard>
+                                        <HoverCard>
+                                            <HoverCardTrigger> <span>Apresentação de artes - 02/04</span></HoverCardTrigger>
+                                            <HoverCardContent>
+                                            <h1>Nota Parcial: 10 pontos</h1>
+                                                <h1>Apresentação de artes</h1>
+                                                <h1>Professora Iara M.</h1>
+                                            </HoverCardContent>
+                                        </HoverCard>
+
+                                       
+                                       
                                     </div>
                                     <a href="#" className='p-2 font-semibold underline'>Ver Mais</a>
                                 </div>
