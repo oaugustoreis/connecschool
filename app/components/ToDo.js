@@ -58,13 +58,13 @@ export default function Todo() {
                                                     <div className='flex gap-1 items-center flex flex-col'>
                                                         <p>Concluir</p>
                                                         <button className='bg-[#7fdd53] p-2 w-fit rounded-full cursor-pointer hover:bg-[#60bcfa]'>
-                                                            <img className='invert' width="32" src="https://img.icons8.com/windows/32/checkmark--v1.png" alt="checkmark--v1" />
+                                                            <img className='invert' width="24" src="https://img.icons8.com/windows/24/checkmark--v1.png" alt="checkmark--v1" />
                                                         </button>
                                                     </div>
                                                     <div className='flex gap-1 items-center flex flex-col'>
                                                         <p>Excluir</p>
                                                         <button className='bg-red-500 p-2 w-fit rounded-full cursor-pointer hover:bg-red-300'>
-                                                            <img className='invert' width="32" height="32" src="https://img.icons8.com/windows/32/trash.png" alt="trash" />
+                                                            <img className='invert' width="24" height="24" src="https://img.icons8.com/windows/24/trash.png" alt="trash" />
                                                         </button>
                                                     </div>
                                                 </div>
@@ -111,13 +111,13 @@ export default function Todo() {
                                                     <div className='flex gap-1 items-center flex flex-col'>
                                                         <p>Concluir</p>
                                                         <button className='bg-[#7fdd53] p-2 w-fit rounded-full cursor-pointer hover:bg-[#60bcfa]'>
-                                                            <img className='invert' width="32" src="https://img.icons8.com/windows/32/checkmark--v1.png" alt="checkmark--v1" />
+                                                            <img className='invert' width="24" src="https://img.icons8.com/windows/24/checkmark--v1.png" alt="checkmark--v1" />
                                                         </button>
                                                     </div>
                                                     <div className='flex gap-1 items-center flex flex-col'>
                                                         <p>Excluir</p>
                                                         <button className='bg-red-500 p-2 w-fit rounded-full cursor-pointer hover:bg-red-300'>
-                                                            <img className='invert' width="32" height="32" src="https://img.icons8.com/windows/32/trash.png" alt="trash" />
+                                                            <img className='invert' width="24" height="24" src="https://img.icons8.com/windows/24/trash.png" alt="trash" />
                                                         </button>
                                                     </div>
                                                 </div>
@@ -162,13 +162,13 @@ export default function Todo() {
                                                     <div className='flex gap-1 items-center flex flex-col'>
                                                         <p>Concluir</p>
                                                         <button className='bg-[#7fdd53] p-2 w-fit rounded-full cursor-pointer hover:bg-[#60bcfa]'>
-                                                            <img className='invert' width="32" src="https://img.icons8.com/windows/32/checkmark--v1.png" alt="checkmark--v1" />
+                                                            <img className='invert' width="24" src="https://img.icons8.com/windows/24/checkmark--v1.png" alt="checkmark--v1" />
                                                         </button>
                                                     </div>
                                                     <div className='flex gap-1 items-center flex flex-col'>
                                                         <p>Excluir</p>
                                                         <button className='bg-red-500 p-2 w-fit rounded-full cursor-pointer hover:bg-red-300'>
-                                                            <img className='invert' width="32" height="32" src="https://img.icons8.com/windows/32/trash.png" alt="trash" />
+                                                            <img className='invert' width="24" height="24" src="https://img.icons8.com/windows/24/trash.png" alt="trash" />
                                                         </button>
                                                     </div>
                                                 </div>
@@ -210,13 +210,13 @@ export default function Todo() {
                                                     <div className='flex gap-1 items-center flex flex-col'>
                                                         <p>Concluir</p>
                                                         <button className='bg-[#7fdd53] p-2 w-fit rounded-full cursor-pointer hover:bg-[#60bcfa]'>
-                                                            <img className='invert' width="32" src="https://img.icons8.com/windows/32/checkmark--v1.png" alt="checkmark--v1" />
+                                                            <img className='invert' width="24" src="https://img.icons8.com/windows/24/checkmark--v1.png" alt="checkmark--v1" />
                                                         </button>
                                                     </div>
                                                     <div className='flex gap-1 items-center flex flex-col'>
                                                         <p>Excluir</p>
                                                         <button className='bg-red-500 p-2 w-fit rounded-full cursor-pointer hover:bg-red-300'>
-                                                            <img className='invert' width="32" height="32" src="https://img.icons8.com/windows/32/trash.png" alt="trash" />
+                                                            <img className='invert' width="24" height="24" src="https://img.icons8.com/windows/24/trash.png" alt="trash" />
                                                         </button>
                                                     </div>
                                                 </div>

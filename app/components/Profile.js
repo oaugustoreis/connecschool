@@ -5,7 +5,7 @@ import Alterar from './ProfileComponents/AlterarSenha';
 import EditarDependente from './ProfileComponents/EditarDependente';
 import AdicionarDependente from './ProfileComponents/AdicionarDependente';
 export default function Profile({ userData }) {
-    const [activeComponent, setActiveComponent] = useState('dashboard');
+    const [activeComponent, setActiveComponent] = useState('alterar-senha');
     const haldlesubmit = (action) => {
         console.log(action);
         setActiveComponent(action);
