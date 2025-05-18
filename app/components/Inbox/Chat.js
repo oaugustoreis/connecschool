@@ -1,16 +1,14 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import Message from "./ChatMessage";
 
 export default function Chat({ conversa }) {
-  const [messages, setMessages] = useState([
-    { message: "Oi, professora Iara! Tudo bem? A Jadna comentou que teve uma atividade em grupo hoje. Ela ficou um pouco insegura queria saber como ela se saiu.", side: true },
-    { message: "Aproveitando, queria agradecer pelo apoio que você tem dado a ela. Tem feito muita diferença, viu?", side: false },
-    { message: "Oi, Dona Abigail! Tudo ótimo, obrigada. A Jadna participou sim e se saiu muito bem! No início estava tímida, mas depois colaborou com ótimas ideias.", side: true },
-    { message: "Ela vem mostrando muita evolução. Estamos muito felizes com o progresso!", side: true },
-  ]);
 
+   const [messages, setMessages] = useState(conversa?.conversation || []);
   const [inputValue, setInputValue] = useState("");
-
+  useEffect(() => {
+    setMessages(conversa?.conversation || []);
+  }, [conversa]);
   function handleSendMessage() {
     if (inputValue.trim() === "") return;
 
@@ -35,14 +33,15 @@ export default function Chat({ conversa }) {
             </div>
           </div>
         </div>
-  
+
         <div className="flex-1 overflow-y-auto p-4">
-          {conversa.conversation.map((msg, index) => (
+          {messages.map((msg, index) => (
             <Message key={index} side={msg.side} message={msg.message} />
           ))}
+
         </div>
-  
-        <div className="flex items-center p-2 gap-3 bg-white shadow-inner">
+
+        <div className="flex items-center p-2 gap-3 bg-white">
           <div className="flex items-center w-full max-w-2xl shadow-md px-3 bg-white py-2 border border-gray-300 rounded-full">
             <input
               className="w-full outline-none"

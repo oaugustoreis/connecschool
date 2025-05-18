@@ -31,17 +31,17 @@ export default function Dashboard() {
                     <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
 
                     <div className="flex justify-center gap-16 mb-8">
-                        <div className="bg-white w-1/7 rounded-2xl shadow-[0_6px_6px_rgba(0,0,0,0.05)] p-5 text-center">
+                        <div className="bg-white w-1/4 rounded-2xl shadow-[0_6px_6px_rgba(0,0,0,0.05)] p-5 text-center">
                             <span className="text-gray-500 text-sm">Atividades entregues</span>
                             <h2 className="text-4xl font-bold mt-2">03</h2>
                         </div>
 
-                        <div className="bg-white   w-1/7 rounded-2xl shadow-[0_6px_6px_rgba(0,0,0,0.05)] p-5 text-center">
+                        <div className="bg-white   w-1/4 rounded-2xl shadow-[0_6px_6px_rgba(0,0,0,0.05)] p-5 text-center">
                             <span className="text-gray-500 text-sm">Atividades pendentes</span>
                             <h2 className="text-4xl font-bold mt-2">07</h2>
                         </div>
 
-                        <div className="bg-white  w-1/7  rounded-2xl shadow-[0_6px_6px_rgba(0,0,0,0.05)] p-5 relative">
+                        <div className="bg-white  w-1/4  rounded-2xl shadow-[0_6px_6px_rgba(0,0,0,0.05)] p-5 relative">
                             <span className="text-gray-500 text-sm">Última prova</span>
                             <h3 className="mt-2 font-semibold">12/02/2025</h3>
                             <p className="text-black font-bold">Matemática</p>
@@ -51,7 +51,7 @@ export default function Dashboard() {
                             </div>
                         </div>
 
-                        <div className="bg-white  w-1/7  rounded-2xl shadow-[0_6px_6px_rgba(0,0,0,0.05)] p-5 relative">
+                        <div className="bg-white  w-1/4  rounded-2xl shadow-[0_6px_6px_rgba(0,0,0,0.05)] p-5 relative">
                             <span className="text-gray-500 text-sm">Próxima prova</span>
                             <p className="text-black font-bold mt-2">Biologia</p>
                             <h3 className="text-black text-xl font-extrabold">12/03/2025</h3>
@@ -72,7 +72,7 @@ export default function Dashboard() {
                         </div>
 
                         <div className="h-64">
-                            <ResponsiveContainer width="100%" height="100%">
+                            <ResponsiveContainer>
                                 <RechartLineChart data={data}>
                                     <CartesianGrid strokeDasharray="3 3" />
                                     <XAxis dataKey="dia" />
