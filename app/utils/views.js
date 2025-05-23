@@ -62,7 +62,14 @@ export async function buscarProfessores() {
 export async function listarActivities(userId, childId) {
     try {
         const querySnapshot = await getDocs(
-            collection(fireStore, "users", userId, "childs", childId, "activities")
+            collection(
+                fireStore,
+                "users",
+                userId,
+                "childs",
+                childId,
+                "activities"
+            )
         );
         return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     } catch (error) {
@@ -107,11 +114,13 @@ export async function editarChild(userId, childId, novosDados) {
     }
 }
 
-export async function criarChild(userId, firstName, lastName) {
+export async function criarChild(userId, firstName, lastName, escola, codigoTurma) {
     try {
         const childData = {
             firstName,
             lastName,
+            escola,
+            codigoTurma,
             createdAt: new Date(),
         };
         const childRef = await addDoc(
@@ -119,9 +128,28 @@ export async function criarChild(userId, firstName, lastName) {
             childData
         );
         console.log("Child criado com sucesso! ID:", childRef.id);
-        return childRef.id; // retorna o ID do child criado
+        return childRef.id;
     } catch (error) {
         console.error("Erro ao criar child:", error);
         return null;
     }
+}
+
+
+export async function getChilds(userId) {
+  try {
+    const childsRef = collection(fireStore, "users", userId, "childs");
+
+    const querySnapshot = await getDocs(childsRef);
+
+    const childs = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+
+    return childs;
+  } catch (error) {
+    console.error("Erro ao buscar childs:", error);
+    return [];
+  }
 }

@@ -15,9 +15,9 @@ export default function Profile({ userData }) {
             case 'alterar-senha':
                 return <Alterar />;
             case 'adicionar-dependente':
-                return <AdicionarDependente />;
+                return <AdicionarDependente userId={localStorage.getItem('userId')}  />;
             case 'editar-dependente':
-                return <EditarDependente />;
+                return <EditarDependente userId={localStorage.getItem('userId')} />;
             default:
         }
     };
@@ -42,9 +42,9 @@ export default function Profile({ userData }) {
                             <div className="flex flex-col items-left justify-center mb-2">
                                 <span className="text-gray-600 text-sm">nome:</span>
 
-                                <div className='w-full flex justify-between px-4 text-sm bg-white py-3 border border-gray-300 rounded-full cursor-pointer hover:bg-gray-50'>
-                                    <input type="text" id="email" name="email" defaultValue={`${userData.firstName} ${userData.lastName}`} className="w-full outline-none" />
-                                    <img width="20" src="https://img.icons8.com/windows/32/edit--v1.png" alt="edit--v1" />
+                                <div className='w-full flex justify-between px-4 text-sm bg-gray-100 py-3 border border-gray-300 rounded-full cursor-pointer hover:bg-gray-50'>
+                                    <input type="text" id="nome" name="email" readOnly defaultValue={`${userData.firstName} ${userData.lastName}`} className="w-full outline-none" />
+                                    {/* <img width="20" src="https://img.icons8.com/windows/32/edit--v1.png" alt="edit--v1" /> */}
                                 </div>
                             </div>
                             <div className="flex flex-col items-left justify-center">

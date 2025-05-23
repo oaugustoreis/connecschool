@@ -29,29 +29,25 @@ const data = [
   { dia: "08", nota: 8 },
   { dia: "09", nota: 6.5 },
   { dia: "10", nota: 7.5 },
-  // adicione mais dados se quiser
 ];
 
-export default function Dashboard() {
+export default function Dashboard({userId}) {
   const handleAdicionar = () => {
     const userId = "A6iMtick7pVQF16JibpxU8Iskum2";
     const childId = "jRskWlwoslZWYrXc1YIF";
 
-    // Adicionar atividade
     adicionarActivity(userId, childId, {
       title: "Atividade de Fixação",
       desc: "Descrição da nova atividade",
       prazo: "2025-06-15T15:00:00Z",
     });
 
-    // Adicionar falta
     adicionarFalta(userId, childId, {
       data: "2025-06-10",
       materia: "Lingua Inglesa",
       justificada: true,
     });
 
-    // Adicionar nota
     adicionarNota(userId, childId, {
       materia: "Portugues",
       nota: 9,
@@ -67,7 +63,6 @@ export default function Dashboard() {
         className="flex flex-col items-center h-5/6 w-5/6 "
       >
         <div className="w-full p-6">
-          <button onClick={handleAdicionar}>Add</button>
           <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
 
           <div className="flex justify-center gap-16 mb-8">
