@@ -3,6 +3,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, LineChart } from "lucide-react";
+import { adicionarProfessoresEmLote } from "../utils/views";
 import { LineChart as RechartLineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const data = [
@@ -20,6 +21,9 @@ const data = [
 ];
 
 export default function Dashboard() {
+    const handleAdicionar = () => {
+    adicionarProfessoresEmLote();
+  };
     return (
         <AnimatePresence>
             <motion.div
@@ -28,6 +32,7 @@ export default function Dashboard() {
                 transition={{ type: "spring", duration: 0.2, delay: 0 }} className="flex flex-col items-center h-5/6 w-5/6 ">
 
                 <div className="w-full p-6">
+                    <button onClick={handleAdicionar}>Add</button>
                     <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
 
                     <div className="flex justify-center gap-16 mb-8">
